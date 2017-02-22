@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
 //Interface
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerFrom: UIPickerView!
     @IBOutlet weak var pickerTo: UIPickerView!
@@ -33,13 +35,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
 //UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        if pickerView == pickerTo{
+            return NSAttributedString(string:self.currenciesExceptBase()[row], attributes: [NSForegroundColorAttributeName:UIColor.orange])
+        }
+
+       return NSAttributedString(string: currencies[row], attributes: [NSForegroundColorAttributeName:UIColor.orange])
+    }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerTo{
             return self.currenciesExceptBase()[row]
         }
+        
         return currencies[row]
     }
+    
     
 //For any value
     
@@ -71,6 +82,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.retrieveCurrencyRate(baseCurrency: baseCurrency, toCurrency: toCurrency) {[weak self] (value)  in
             DispatchQueue.main.async(execute: {
                 if let strongSelf = self{
+                    
                     strongSelf.label.text = value
                     strongSelf.activityIndicator.stopAnimating()
                 }
@@ -98,10 +110,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             let json = try JSONSerialization.jsonObject(with: data!, options: []) as? Dictionary<String, Any>
             
             if let parsedJSON = json {
-                print("\(parsedJSON)")
+            print("\(parsedJSON)")
                 if let rates = parsedJSON["rates"] as? Dictionary<String, Double> {
                     if let rate = rates[toCurrency] {
                         value = "\(rate)"
+                        
                            }  else {
                               value = "No rate for currency \"\(toCurrency)\" found"
                     }
@@ -114,7 +127,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }  catch {
                         value = error.localizedDescription
                     }
-                    return value
+        
+        return value
                 }
     
     func retrieveCurrencyRate(baseCurrency: String, toCurrency: String, completion: @escaping (String)->Void){
@@ -129,14 +143,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
             completion(string)
             }
+        self.label1.text = "1 " + baseCurrency
+        self.label2.text = toCurrency
     }
-        
-
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.label.text = "Тут будет курс"
         
+        self.pickerTo.reloadAllComponents()
         self.pickerTo.dataSource = self
         self.pickerFrom.dataSource = self
         
@@ -144,16 +161,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.pickerFrom.delegate = self
         
         self.requestCurrentCurrencyRate()
-        self.requestCurrencyRates(baseCurrency: "RUB"){
-            (data,error) in
-        }
+                
         
-        self.retrieveCurrencyRate(baseCurrency: "USD", toCurrency: "RUB") { [weak self] (value) in DispatchQueue.main.async(execute: {
-            if let strongSelf = self {
-                strongSelf.label.text = value
-            }
-            })
-        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,30 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Modal Overlay-1" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-fU-gqU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Modal Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="hul-Uw-mr8">
-                                <rect key="frame" x="0.0" y="502" width="145" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Курс на сегодня" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grC-Ag-A1c">
-                                <rect key="frame" x="16" y="283" width="236" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.5607843137254902" green="0.58039215686274503" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grC-Ag-A1c">
+                                <rect key="frame" x="110" y="440" width="161" height="46"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="38"/>
+                                <color key="textColor" red="1" green="0.58431372549019611" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Modal Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="RFd-kk-rbS">
-                                <rect key="frame" x="138" y="502" width="133" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Modal Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-mL-cyJ">
+                                <rect key="frame" x="81" y="227" width="213" height="213"/>
                             </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="0.34901960784313724" green="0.38039215686274508" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="X9n-fU-gqU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="16f-BZ-w8n"/>
-                            <constraint firstItem="X9n-fU-gqU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Irb-Ol-h9U"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="X9n-fU-gqU" secondAttribute="bottom" id="PLV-P1-bUv"/>
-                            <constraint firstAttribute="trailing" secondItem="X9n-fU-gqU" secondAttribute="trailing" id="dJj-Su-DKa"/>
+                            <constraint firstItem="grC-Ag-A1c" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="2.5" id="Mxm-jV-uwt"/>
+                            <constraint firstItem="grC-Ag-A1c" firstAttribute="top" secondItem="ViU-mL-cyJ" secondAttribute="bottom" id="Nww-Ap-q9q"/>
+                            <constraint firstItem="ViU-mL-cyJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VRk-Vk-3nW"/>
+                            <constraint firstItem="ViU-mL-cyJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eT7-cD-Ccd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -54,7 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Modal Overlay" width="138" height="118"/>
-        <image name="Modal Overlay-1" width="375" height="667"/>
+        <image name="Modal Overlay" width="213" height="213"/>
     </resources>
 </document>

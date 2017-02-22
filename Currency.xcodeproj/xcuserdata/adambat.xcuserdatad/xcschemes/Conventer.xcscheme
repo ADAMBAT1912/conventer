@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B27E2AAF1E5B5E8D00235DB6"
-               BuildableName = "Conventer.app"
-               BlueprintName = "Conventer"
-               ReferencedContainer = "container:Conventer.xcodeproj">
+               BuildableName = "Currency.app"
+               BlueprintName = "Currency"
+               ReferencedContainer = "container:Currency.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B27E2AAF1E5B5E8D00235DB6"
-            BuildableName = "Conventer.app"
-            BlueprintName = "Conventer"
-            ReferencedContainer = "container:Conventer.xcodeproj">
+            BuildableName = "Currency.app"
+            BlueprintName = "Currency"
+            ReferencedContainer = "container:Currency.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B27E2AAF1E5B5E8D00235DB6"
-            BuildableName = "Conventer.app"
-            BlueprintName = "Conventer"
-            ReferencedContainer = "container:Conventer.xcodeproj">
+            BuildableName = "Currency.app"
+            BlueprintName = "Currency"
+            ReferencedContainer = "container:Currency.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B27E2AAF1E5B5E8D00235DB6"
-            BuildableName = "Conventer.app"
-            BlueprintName = "Conventer"
-            ReferencedContainer = "container:Conventer.xcodeproj">
+            BuildableName = "Currency.app"
+            BlueprintName = "Currency"
+            ReferencedContainer = "container:Currency.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
